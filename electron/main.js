@@ -18,7 +18,7 @@ const createWindow = () => {
 
     // Load the Vite server in development or the index.html in production
     app.isPackaged
-        ? mainWindow.loadFile(path.join(__dirname, "index.html")) // Prod
+        ? mainWindow.loadFile(path.join(__dirname,'..', "index.html")) // Prod
         : mainWindow.loadURL("app://./index.html"); // Dev
 };
 

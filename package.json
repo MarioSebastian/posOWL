@@ -24,9 +24,9 @@
     "appId": "com.owl.pos",
     "productName": "OWL POS 1",
     "files": [
-      "dist/**/*",
-      "electron/**/*",
-      "preload.js"
+      "electron/**",
+      "preload.js",
+      "index.html"
     ],
     "directories": {
       "buildResources": "assets"
