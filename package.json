@@ -1,13 +1,13 @@
 {
   "name": "owl-pos",
-  "private": true,
   "version": "0.0.1",
+  "description": "POS OWL",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "electron:start": "electron electron/main.js",
-    "start": "vite & electron electron/main.js"
+    "start": "vite & electron electron/main.js",
+    "buildElectron": "electron-builder build --mac"
   },
   "dependencies": {
     "vue": "^3.5.10"
@@ -17,5 +17,31 @@
     "electron": "^33.0.0-beta.8",
     "electron-builder": "^25.1.7",
     "vite": "^5.4.8"
+  },
+  "main": "electron/main.js",
+  "type": "module",
+  "build": {
+    "appId": "com.owl.pos",
+    "productName": "OWL POS 1",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "preload.js"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "zip",
+          "arch": ["x64"]
+        }
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/owl-fullDev/owl-pos.git"
   }
 }
