@@ -7,7 +7,7 @@
     "build": "vite build",
     "electron:start": "electron electron/main.js",
     "start": "vite & electron electron/main.js",
-    "buildElectron": "electron-builder build --mac"
+    "buildElectron": "vite build & electron-builder build --mac"
   },
   "dependencies": {
     "vue": "^3.5.10"
@@ -25,6 +25,9 @@
     "productName": "OWL POS 1",
     "files": [
       "electron/**",
+      "dist/index.html",
+      "dist/assets/**",
+      "src/**",
       "preload.js",
       "index.html"
     ],
@@ -35,7 +38,9 @@
       "target": [
         {
           "target": "zip",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ]
     }

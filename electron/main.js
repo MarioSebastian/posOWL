@@ -18,8 +18,8 @@ const createWindow = () => {
 
     // Load the Vite server in development or the index.html in production
     app.isPackaged
-        ? mainWindow.loadFile(path.join(__dirname,'..', "index.html")) // Prod
-        : mainWindow.loadURL("app://./index.html"); // Dev
+        ? mainWindow.loadFile(path.join(__dirname,'..', 'dist', "index.html")) // Prod
+        : mainWindow.loadURL(`http://127.0.0.1:5173`); // Dev
 };
 
 // Quit the app when all windows are closed (except on macOS)
